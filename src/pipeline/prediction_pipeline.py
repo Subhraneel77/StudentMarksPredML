@@ -17,9 +17,9 @@ class PredictPipeline:
             model=load_obj(file_path=model_path)
             preprocessor=load_obj(file_path=preprocessor_path)
             print("After Loading")
-            data_scaled=preprocessor.transform(features)
-            preds=model.predict(data_scaled)
-            return preds
+            data_scaled=preprocessor.transform(features) #transform the features
+            preds=model.predict(data_scaled) #my model will do the prediction
+            return preds #it will return the prediction
         
         except Exception as e:
             raise CustomException(e,sys)

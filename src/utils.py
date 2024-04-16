@@ -1,19 +1,21 @@
 import os 
 import sys 
+
 import pickle 
 import numpy as np 
 import pandas as pd
+import dill
 from src.exception import CustomException
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import r2_score
 from src.logger import logging
 
-def save_function(file_path, obj): 
+def save_function(file_path, obj): #it will have my file_path and obj then iis going to make the directory according to the particular file path and is going to dump it.
     try:
         dir_path = os.path.dirname(file_path)
         os.makedirs(dir_path, exist_ok= True)
         with open (file_path, "wb") as file_obj: 
-            pickle.dump(obj, file_obj)
+            dill.dump(obj, file_obj) # when we duump the obj then the object will be saved in this specific file path.
 
     except Exception as e: 
         raise CustomException(e,sys)
@@ -43,8 +45,8 @@ def model_performance(X_train, y_train, X_test, y_test, models,param):
     except Exception as e: 
         raise CustomException(e,sys)
 
-# Function to load a particular object 
-def load_obj(file_path):
+
+def load_obj(file_path): #opening the file in read byte mode nad is loading teh pickel file
     try: 
         with open(file_path, "rb") as file_obj: 
             return pickle.load(file_obj)
