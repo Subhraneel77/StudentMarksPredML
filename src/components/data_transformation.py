@@ -33,51 +33,7 @@ class DataTransformation:
                 'test_preparation_course']
             numerical_cols = ['writing_score', 'reading_score']
             
-            # Define the custom ranking for each ordinal variable
-            manufacturer_categories = ['LEXUS', 'CHEVROLET', 'HONDA', 'FORD', 'HYUNDAI', 'TOYOTA',
-       'MERCEDES-BENZ', 'OPEL', 'PORSCHE', 'BMW', 'JEEP', 'VOLKSWAGEN',
-       'AUDI', 'RENAULT', 'NISSAN', 'SUBARU', 'DAEWOO', 'KIA',
-       'MITSUBISHI', 'SSANGYONG', 'MAZDA', 'GMC', 'FIAT', 'INFINITI',
-       'ALFA ROMEO', 'SUZUKI', 'ACURA', 'LINCOLN', 'VAZ', 'GAZ',
-       'CITROEN', 'LAND ROVER', 'MINI', 'DODGE', 'CHRYSLER', 'JAGUAR',
-       'ISUZU', 'SKODA', 'DAIHATSU', 'BUICK', 'TESLA', 'CADILLAC',
-       'PEUGEOT', 'BENTLEY', 'VOLVO', 'áƒ¡áƒ®áƒ•áƒ\x90', 'HAVAL',
-       'HUMMER', 'SCION', 'UAZ', 'MERCURY', 'ZAZ', 'ROVER', 'SEAT',
-       'LANCIA', 'MOSKVICH', 'MASERATI', 'FERRARI', 'SAAB', 'LAMBORGHINI',
-       'ROLLS-ROYCE', 'PONTIAC', 'SATURN', 'ASTON MARTIN', 'GREATWALL']
-            model_categories = ['RX 450', 'Equinox', 'FIT', ..., 'E 230 124', 'RX 450 F SPORT',
-       'Prius C aqua']
-            category_categories = ['Jeep', 'Hatchback', 'Sedan', 'Microbus', 'Goods wagon',
-       'Universal', 'Coupe', 'Minivan', 'Cabriolet', 'Limousine',
-       'Pickup']
-            leatherinterior_categories = ['Yes', 'No']
-            fueltype_categories = ['Hybrid', 'Petrol', 'Diesel', 'CNG', 'Plug-in Hybrid', 'LPG',
-       'Hydrogen']
-            enginevolume_categories = ['3.5', '3', '1.3', '2.5', '2', '1.8', '2.4', '4', '1.6', '3.3',
-       '2.0 Turbo', '2.2 Turbo', '4.7', '1.5', '4.4', '3.0 Turbo',
-       '1.4 Turbo', '3.6', '2.3', '1.5 Turbo', '1.6 Turbo', '2.2',
-       '2.3 Turbo', '1.4', '5.5', '2.8 Turbo', '3.2', '3.8', '4.6', '1.2',
-       '5', '1.7', '2.9', '0.5', '1.8 Turbo', '2.4 Turbo', '3.5 Turbo',
-       '1.9', '2.7', '4.8', '5.3', '0.4', '2.8', '3.2 Turbo', '1.1',
-       '2.1', '0.7', '5.4', '1.3 Turbo', '3.7', '1', '2.5 Turbo', '2.6',
-       '1.9 Turbo', '4.4 Turbo', '4.7 Turbo', '0.8', '0.2 Turbo', '5.7',
-       '4.8 Turbo', '4.6 Turbo', '6.7', '6.2', '1.2 Turbo', '3.4',
-       '1.7 Turbo', '6.3 Turbo', '2.7 Turbo', '4.3', '4.2', '2.9 Turbo',
-       '0', '4.0 Turbo', '20', '3.6 Turbo', '0.3', '3.7 Turbo', '5.9',
-       '5.5 Turbo', '0.2', '2.1 Turbo', '5.6', '6', '0.7 Turbo',
-       '0.6 Turbo', '6.8', '4.5', '0.6', '7.3', '0.1', '1.0 Turbo', '6.3',
-       '4.5 Turbo', '0.8 Turbo', '4.2 Turbo', '3.1', '5.0 Turbo', '6.4',
-       '3.9', '5.7 Turbo', '0.9', '0.4 Turbo', '5.4 Turbo', '0.3 Turbo',
-       '5.2', '5.8', '1.1 Turbo']
-            mileage_categories = ['186005 km', '192000 km', '200000 km', ..., '140607 km',
-       '307325 km', '186923 km']
-            gearboxtype_categories = ['Automatic', 'Tiptronic', 'Variator', 'Manual']
-            drivewheels_categories = ['4x4', 'Front', 'Rear']
-            doors_categories = ['4', '2', '>5']
-            wheel_categories = ['Left wheel', 'Right-hand drive']
-            color_categories = ['Silver', 'Black', 'White', 'Grey', 'Blue', 'Green', 'Red',
-       'Sky blue', 'Orange', 'Yellow', 'Brown', 'Golden', 'Beige',
-       'Carnelian red', 'Purple', 'Pink']
+ 
             logging.info('Pipeline Initiated')
 
             ## Numerical Pipeline

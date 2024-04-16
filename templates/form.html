@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* CSS styles */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+            width: auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #b3006b;
+        }
+        
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="{{url_for('predict_datapoint')}}" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <input type="text" id="gender" name="gender" placeholder="Enter your gender">
+                <div id="productionyear-error" class="error-message"></div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <label for="parental_level_of_education">Select Parent Education:</label>
+                <select id="parental_level_of_education" name="parental_level_of_education">
+                    <option value="associate's degree">associate's degree</option>
+                    <option value="bachelor's degree">bachelor's degree</option>
+                    <option value="high school">high school</option>
+                    <option value="master's degree">master's degree</option>
+                    <option value="some college">some college</option>
+                    <option value="some high school">some high school</option>
+                </select>
+                <div id="drivewheels-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="race_ethnicity">Race or Ethnicity:</label>
+                <select id="race_ethnicity" name="race_ethnicity">
+                    <option value="group A">Group A</option>
+                    <option value="group B">Group B</option>
+                    <option value="group C">Group C</option>
+                    <option value="group D">Group D</option>
+                    <option value="group e">Group E</option>
+                </select>
+                <div id="fueltype-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="lunch">Select Lunch Type:</label>
+                <select id="lunch" name="lunch">
+                    <option value="free/reduced">Free/Reduced</option>
+                    <option value="standard">Standard</option>
+                </select>
+                <div id="fueltype-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="test_preparation_course">Select Test_course:</label>
+                <select id="test_preparation_course" name="test_preparation_course">
+                    <option value="none">None</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <div id="fueltype-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="writing_score">Writing Score out of 100:</label>
+                <input type="text" id="writing_score" name="writing_score" placeholder="Enter Writing Score">
+                <div id="cylinders-error" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="reading_score">Reading Score out of 100:</label>
+                <input type="text" id="reading_score" name="reading_score" placeholder="Enter Reading Score">
+                <div id="cylinders-error" class="error-message"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        function validateForm() {
+            var gender = document.getElementById("gender").value;
+            var race_ethnicity = document.getElementById("race_ethnicity").value;
+            var parental_level_of_education = document.getElementById("parental_level_of_education").value;
+            var lunch = document.getElementById("lunch").value;
+            var test_preparation_course = document.getElementById("test_preparation_course").value;
+            var leatherinterior = document.getElementById("leatherinterior").value;
+            var writing_score = document.getElementById("writing_score").value;
+            var reading_score = document.getElementById("reading_score").value;
+
+            // Check if any field is empty
+            if (gender === "" || race_ethnicity === "" || parental_level_of_education === "" || lunch === "" || test_preparation_course === "" || leatherinterior === "" || writing_score === "" || reading_score === "") {
+                alert("Please fill in all fields");
+                return false;
+            }
+
+            // Validate numerical input fields (writing_score and reading_score)
+            if (isNaN(writing_score) || isNaN(reading_score)) {
+                alert("Writing score and reading score must be numerical values");
+                return false;
+            }
+
+            // Ensure writing_score and reading_score are within the valid range (0-100)
+            if (writing_score < 0 || writing_score > 100 || reading_score < 0 || reading_score > 100) {
+                alert("Writing score and reading score must be between 0 and 100");
+                return false;
+            }
+
+            // Custom validation logic: Example - Check if writing score is greater than reading score
+            if (parseInt(writing_score) <= parseInt(reading_score)) {
+                alert("Writing score must be greater than reading score");
+                return false;
+            }
+
+
+
+            return true; // Form submission will proceed if all fields pass validation
+        }
+    </script>
