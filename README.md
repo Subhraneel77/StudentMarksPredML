@@ -77,7 +77,9 @@ predict.py: Predicts the marks for new student data.
 evaluate.py: Evaluates the performance of the trained model.
 
 Example usage:
-```python train.py --dataset data/train.csv --model rf
+
+```bash
+python train.py --dataset data/train.csv --model rf
 ```
 
 ## Dataset
