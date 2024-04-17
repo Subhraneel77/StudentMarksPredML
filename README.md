@@ -41,3 +41,30 @@ Create two python files training_pipeline and prediction_pipeline with __init__.
 ```
 Create a folder called data and include the dataset. Additionally, create a EDA.ipynb file to do the EDA analysis.
 ```
+# Student Marks Prediction Machine Learning Pipeline
+
+## Overview
+
+This project aims to predict student marks using machine learning techniques. The goal is to develop a robust pipeline that takes in various features related to students and predicts their marks accurately.
+
+## Table of Contents
+
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Dataset](#dataset)
+4. [Preprocessing](#preprocessing)
+5. [Feature Engineering](#feature-engineering)
+6. [Model Training](#model-training)
+7. [Evaluation](#evaluation)
+8. [Deployment](#deployment)
+9. [Contributing](#contributing)
+10. [License](#license)
+
+## Installation
+
+To run this project, you need to have Python 3.11 installed. Clone the repository and install the required dependencies using pip:
+
+```bash
+git clone https://github.com/yourusername/student-marks-prediction.git
+cd student-marks-prediction
+pip install -r requirements.txt
