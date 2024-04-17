@@ -1,4 +1,4 @@
-## End to End Project
+# Student Marks Prediction Machine Learning Pipeline
 
 ### Step 1: Create a new environment
 
@@ -41,8 +41,6 @@ Create two python files training_pipeline and prediction_pipeline with __init__.
 ```
 Create a folder called data and include the dataset. Additionally, create a EDA.ipynb file to do the EDA analysis.
 ```
-# Student Marks Prediction Machine Learning Pipeline
-
 ## Overview
 
 This project aims to predict student marks using machine learning techniques. The goal is to develop a robust pipeline that takes in various features related to students and predicts their marks accurately.
@@ -68,6 +66,7 @@ To run this project, you need to have Python 3.11 installed. Clone the repositor
 git clone https://github.com/yourusername/student-marks-prediction.git
 cd student-marks-prediction
 pip install -r requirements.txt
+```
 
 ## Usage
 
@@ -78,7 +77,8 @@ predict.py: Predicts the marks for new student data.
 evaluate.py: Evaluates the performance of the trained model.
 
 Example usage:
-python train.py --dataset data/train.csv --model rf
+```python train.py --dataset data/train.csv --model rf
+```
 
 ## Dataset
 
@@ -91,4 +91,20 @@ Before training the model, the dataset undergoes preprocessing steps such as han
 ## Feature Engineering
 
 Feature engineering involves creating new features or transforming existing ones to improve model performance. The feature engineering code can be found in feature_engineering.py.
+
+## Model Training
+
+The model_training.ipynb notebook contains code for building and training the machine learning model using the preprocessed data. Various algorithms can be explored and compared for model training.
+
+## Evaluation
+
+The model_training.ipynb notebook displays the trained model's performance metrics such as accuracy, precision, recall, and F1-score.
+
+## Deployment
+
+Once satisfied with the model's performance, you can deploy it using various methods such as Flask API, Docker container, or cloud-based solutions.
+
+## Contributing
+
+Contributions are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
