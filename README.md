@@ -68,3 +68,27 @@ To run this project, you need to have Python 3.11 installed. Clone the repositor
 git clone https://github.com/yourusername/student-marks-prediction.git
 cd student-marks-prediction
 pip install -r requirements.txt
+
+## Usage
+
+Once you have installed the dependencies, you can use the provided scripts to run different parts of the pipeline. Here are the main scripts:
+
+train.py: Used to train the machine learning model.
+predict.py: Predicts the marks for new student data.
+evaluate.py: Evaluates the performance of the trained model.
+
+Example usage:
+python train.py --dataset data/train.csv --model rf
+
+## Dataset
+
+The dataset used in this project contains information about students such as age, gender, study time, etc., and their corresponding marks. You can find the dataset in the data directory.
+
+## Preprocessing
+
+Before training the model, the dataset undergoes preprocessing steps such as handling missing values, encoding categorical variables, and scaling numerical features. You can find the preprocessing code in preprocessing.py.
+
+## Feature Engineering
+
+Feature engineering involves creating new features or transforming existing ones to improve model performance. The feature engineering code can be found in feature_engineering.py.
+
