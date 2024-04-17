@@ -10,12 +10,16 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import r2_score
 from src.logger import logging
 
+import pymysql # used for fetching data from MySQL workbench
+
+
+
 def save_function(file_path, obj): #it will have my file_path and obj then iis going to make the directory according to the particular file path and is going to dump it.
     try:
         dir_path = os.path.dirname(file_path)
         os.makedirs(dir_path, exist_ok= True)
         with open (file_path, "wb") as file_obj: 
-            dill.dump(obj, file_obj) # when we duump the obj then the object will be saved in this specific file path.
+            dill.dump(obj, file_obj) # when we dump the obj then the object will be saved in this specific file path.
 
     except Exception as e: 
         raise CustomException(e,sys)
@@ -53,3 +57,19 @@ def load_obj(file_path): #opening the file in read byte mode nad is loading teh 
     except Exception as e: 
         logging.info("Error in load_object fuction in utils")
         raise CustomException(e,sys)
+
+def fetch_data_from_mysql():
+    # Connect to MySQL database
+    connection = pymysql.connect(host='root',
+                                 user='liveconnection',
+                                 password='*******',
+                                 database='student')
+    
+    # Fetch data from MySQL database
+    query = "SELECT * FROM studentmarksproject"
+    df = pd.read_sql(query, connection)
+    
+    # Close the connection
+    connection.close()
+    
+    return df

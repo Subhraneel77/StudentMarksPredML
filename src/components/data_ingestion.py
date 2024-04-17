@@ -12,7 +12,7 @@ from src.components.data_transformation import DataTransformationConfig
 from src.components.model_trainer import ModelTrainerConfig
 from src.components.model_trainer import ModelTrainer
 
-
+from utils import fetch_data_from_mysql # fetching the dataset from MySQL workbench
 
 ## Step1: Create path variables to store the files are raw csv
 @dataclass #The @dataclass decorator is used to automatically generate base functionalities to classes, including __init__() , __hash__() , __repr__() and more, which helps reduce some boilerplate code.
@@ -29,6 +29,9 @@ class DataIngestion:
     def initiate_data_ingestion(self): #
         logging.info('Data Ingestion methods Starts')
         try:
+            # Fetching data
+            #df = fetch_data_from_mysql()
+
             #df=pd.read_csv('notebooks/data/student.csv')
             df=pd.read_csv(os.path.join('notebooks/data','student.csv')) # here I can read the database from MongoDB, Mysql etc.
             logging.info('Dataset read as pandas Dataframe')
